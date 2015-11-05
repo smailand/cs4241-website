@@ -1,3 +1,9 @@
 body {
-    background-color: #E2A67C;
+    background-color: #E2CEB7;
+}
+h1 {
+    background-color: #7CA6DE;
+    margin: 1em;
+    text-align: center;
+    border-radius: 1em;
 }
