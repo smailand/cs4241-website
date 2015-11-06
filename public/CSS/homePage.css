@@ -1,7 +1,8 @@
 body {
     background-color: #E2CEB7;
 }
-h1 {
+
+#pageHeader {
     background-color: #7CA6DE;
     margin: 0.5em;
     text-align: center;
@@ -10,4 +11,6 @@ h1 {
     border: solid;
     border-color: #1D1378;
     border-width: thin;
+    color: #1D1378;
+    
 }
