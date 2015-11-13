@@ -1,38 +1,4 @@
-html {
-    box-sizing: border-box;
-}
-body {
-    background-color: #F3FFE2;
-    padding: 0;
-    color: #F3FFE2;
-    font-family: 'Open Sans';
-}
-.center {
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-}
-.shadowed {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, .15);
-}
-#topBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #225378;
-    text-align: center;
-}
-#topBar h1 {
-    color: #F3FFE2;
-    font-family: 'Open Sans';
-    margin-top: 10px;
-}
-#pageBody {
-    margin-top: 60px;
-    background-color: #1695A3;
-}
+
 #photos {
     width: 70%;
     float: right;
