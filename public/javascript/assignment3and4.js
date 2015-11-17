@@ -3,12 +3,10 @@ var idIndex = 0;
 window.onload = function(){
     var searchText = getURLParam(window.location, "search");
     if(searchText){
-        console.log("Search exists");
         document.getElementById("searchText").value = searchText;
         search(searchText)
     }
     else{
-        console.log("Search doesn't exist");
         search("");
     }
 
@@ -59,8 +57,6 @@ function httpPostAsync(postPath, callback)
     var arr = url.split("/");
     var result = arr[0] + "//" + arr[2];
     result = result + postPath;
-    console.log("HERE");
-    console.log(result);
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
