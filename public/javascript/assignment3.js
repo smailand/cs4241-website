@@ -111,10 +111,13 @@ function removeMovieFromList(movieIdToRemove){
     var movieList = document.getElementById("movieList");
     var movieToRemoveId = document.getElementById(movieIdToRemove);
     var movieToRemoveName = document.getElementById(movieIdToRemove).innerHTML;
-    console.log(movieToRemoveName);
-    movieList.removeChild(movieToRemoveId);
-    httpPostAsync('/removeMovie?movieToRemove='+movieToRemoveName, function(result){
-        console.log(result);
-    });
+
+    var r = confirm("Confirm deletion of " + movieToRemoveName + "from the list?");
+    if (r === true) {
+        movieList.removeChild(movieToRemoveId);
+        httpPostAsync('/removeMovie?movieToRemove='+movieToRemoveName, function(result){
+            console.log(result);
+        });
+    }
 
 }
