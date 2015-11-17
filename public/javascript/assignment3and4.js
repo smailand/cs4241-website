@@ -108,7 +108,7 @@ function removeMovieFromList(movieIdToRemove){
     var movieToRemoveId = document.getElementById(movieIdToRemove);
     var movieToRemoveName = document.getElementById(movieIdToRemove).innerHTML;
 
-    var r = confirm("Confirm deletion of " + movieToRemoveName + "from the list?");
+    var r = confirm("Confirm deletion of " + movieToRemoveName + " from the list?");
     if (r === true) {
         movieList.removeChild(movieToRemoveId);
         httpPostAsync('/removeMovie?movieToRemove='+movieToRemoveName, function(result){
