@@ -1,0 +1,38 @@
+
+p .movieList{
+    font-style: italic;
+}
+
+
+#movies{
+    margin-top: 2em;
+}
+
+#movies{
+    text-align: center;
+}
+
+#movieList p:hover {
+    color: red;
+    cursor: pointer; cursor: hand;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+#movieList{
+    overflow: auto;
+    height: 20em;
+}
+
+#movieList p{
+    margin: auto;
+    padding: 10px;
+}
+
+#searchBox{
+    float: left;
+}
+
+#addMovieBox{
+    float: right;
+}

@@ -1,3 +1,5 @@
+var idIndex = 0;
+
 window.onload = function(){
     var searchText = getURLParam(window.location, "search");
     if(searchText){
@@ -9,6 +11,8 @@ window.onload = function(){
         console.log("Search doesn't exist");
         search("");
     }
+
+
 };
 
 function search(searchText){
@@ -30,18 +34,6 @@ function search(searchText){
     });
 }
 
-function addToList(){
-    var textToAdd = document.getElementById("textToAdd").value;
-    var list = document.getElementById('movieList');
-    var newEntry = document.createElement('li');
-    newEntry.appendChild(document.createTextNode(textToAdd));
-    list.appendChild(newEntry);
-}
-
-function removeFromList(){
-    var textToRemove = document.getElementById("textToRemove").value;
-    var indexToRemove = document.getElementById(textToRemove);
-}
 
 
 //From https://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search#Examples
@@ -61,13 +53,68 @@ function httpGetAsync(url, callback)
     xmlHttp.send(null);
 }
 
+function httpPostAsync(postPath, callback)
+{
+    var url = window.location.href;
+    var arr = url.split("/");
+    var result = arr[0] + "//" + arr[2];
+    result = result + postPath;
+    console.log("HERE");
+    console.log(result);
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            callback(xmlHttp.responseText);
+        }
+    };
+    xmlHttp.open("POST", result, true); // true for asynchronous
+    xmlHttp.send(null);
+}
+
 
 function updateList(newListArray){
     var list = document.getElementById('movieList');
     list.innerHTML = "";
     for(var i in newListArray){
-        var newEntry = document.createElement('li');
+        var newEntry = document.createElement('p');
+        newEntry.id="movie"+idIndex;
+        idIndex = idIndex + 1;
+        newEntry.addEventListener("click", function(){
+            removeMovieFromList(this.id);
+        });
+
         newEntry.appendChild(document.createTextNode(newListArray[i]));
         list.appendChild(newEntry);
     }
+    var movieToAddInput = document.createElement('input')
+    var addButton = document.createElement('button');
+}
+
+function addToMovieList(){
+    var textToAdd = document.getElementById("movieToAddToList").value;
+    var list = document.getElementById('movieList');
+    var newEntry = document.createElement('p');
+    newEntry.id="movie"+idIndex;
+    idIndex = idIndex + 1;
+    newEntry.addEventListener("click", function(){
+        removeMovieFromList(this.id);
+    });
+    newEntry.appendChild(document.createTextNode(textToAdd));
+    list.appendChild(newEntry);
+    document.getElementById("movieToAddToList").value = "";
+    httpPostAsync('/addMovie?movieToAdd='+textToAdd, function(result){
+        console.log(result);
+    });
+}
+
+function removeMovieFromList(movieIdToRemove){
+    var movieList = document.getElementById("movieList");
+    var movieToRemoveId = document.getElementById(movieIdToRemove);
+    var movieToRemoveName = document.getElementById(movieIdToRemove).innerHTML;
+    console.log(movieToRemoveName);
+    movieList.removeChild(movieToRemoveId);
+    httpPostAsync('/removeMovie?movieToRemove='+movieToRemoveName, function(result){
+        console.log(result);
+    });
+
 }

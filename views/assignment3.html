@@ -7,32 +7,51 @@
     <title>Assignment 3</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/CSS/site.css">
+    <link rel="stylesheet" href="/CSS/moviesPage.css">
     <script src="/javascript/assignment3.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+
     <div id="topBar">
-        <h1>Information About Sam Mailand (CS4241)</h1>
+        <h1>Movies</h1>
     </div>
     <div id="pageBody" class="center shadowed">
 
         <p>Please search below to filter the list of results (case sensitive). A clear search will return the full list.</p>
 
-        <label>Search Text: <input type="text" id="searchText"></input></label>
-        <button onclick="search()" value="submit">Search</button>
+        <div id="searchBox">
+            <label>Search Text:
+                <input type="text" id="searchText"></input>
+            </label>
+            <button onclick="search()" value="submit">Search</button>
+        </div>
 
-        <ul id="movieList">
-        </ul>
+        <div id="addMovieBox">
+            <label>Add Movie:
+                <input type="text" id="movieToAddToList"></input>
+            </label>
+                <button onclick="addToMovieList()" value="Add">Add</button>
+        </div>
+
+        <div id="movies">
+            <h3>
+                Movies
+            </h3>
+            <div id="movieList">
+            </div>
+
+        </div>
 
         <h4>"Technical Achievement" Work:</h4>
         <p>
-            For the final 10% of the grade basd on "technical achievement" I added some client side javascript. <br>
-            This javascript uses the input in the text box to compose a search query that will be used to send a get request to the server.<br>
-            The server then uses that search query to filter the list of movies provided for the project and sends back that filtered list <br>
-            The client then gets that response and updates the HTML to reflect that filtered list. (No filtering is done on the client).<br>
-            The client side javascript also modifies the search query in the URL to reflect what was searched so that the link can be given to others. <br>
-            The text box is also autopopulated based on what is in the search query portion of the URL.
+            For the final 10% of the grade basd on "technical achievement" I added some client side javascript.
+            <br> This javascript uses the input in the text box to compose a search query that will be used to send a get request to the server.
+            <br> The server then uses that search query to filter the list of movies provided for the project and sends back that filtered list
+            <br> The client then gets that response and updates the HTML to reflect that filtered list. (No filtering is done on the client).
+            <br> The client side javascript also modifies the search query in the URL to reflect what was searched so that the link can be given to others.
+            <br> The text box is also autopopulated based on what is in the search query portion of the URL.
         </p>
 
     </div>

@@ -34,3 +34,14 @@ body {
     margin-top: 60px;
     background-color: #1695A3;
 }
+
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table td {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
