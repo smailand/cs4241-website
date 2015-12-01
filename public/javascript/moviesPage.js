@@ -108,19 +108,21 @@ function updateList(newListArray){
 
 function addToMovieList(){
     var textToAdd = document.getElementById("movieToAddToList").value;
-    var list = document.getElementById('movieList');
-    var newEntry = document.createElement('p');
-    newEntry.id="movie"+idIndex;
-    idIndex = idIndex + 1;
-    newEntry.addEventListener("click", function(){
-        removeMovieFromList(this.id);
-    });
-    newEntry.appendChild(document.createTextNode(textToAdd));
-    list.appendChild(newEntry);
-    document.getElementById("movieToAddToList").value = "";
-    httpPostAsync('/addMovie?movieToAdd='+textToAdd, function(result){
-        console.log(result);
-    });
+    if(textToAdd || textToAdd !==""){
+        var list = document.getElementById('movieList');
+        var newEntry = document.createElement('p');
+        newEntry.id="movie"+idIndex;
+        idIndex = idIndex + 1;
+        newEntry.addEventListener("click", function(){
+            removeMovieFromList(this.id);
+        });
+        newEntry.appendChild(document.createTextNode(textToAdd));
+        list.appendChild(newEntry);
+        document.getElementById("movieToAddToList").value = "";
+        httpPostAsync('/addMovie?movieToAdd='+textToAdd, function(result){
+            console.log(result);
+        });
+    }
 }
 
 function removeMovieFromList(movieIdToRemove){

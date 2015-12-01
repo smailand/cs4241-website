@@ -1,1 +1,1 @@
-["Jaws","Space Jams","Sharknado","Kung Fury","Star Wars","",""]
+["Jaws","Space Jams","Sharknado","Kung Fury","Star Wars"]
