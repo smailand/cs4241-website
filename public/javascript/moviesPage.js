@@ -13,14 +13,34 @@ window.onload = function(){
 
 };
 
+function searchMovie(e){
+    if(e.keyCode == 13){
+        search();
+    }
+}
+
+function addMovie(e){
+    if(e.keyCode == 13){
+        addToMovieList();
+    }
+}
+
 function search(searchText){
     if (!searchText && searchText !=="") {
         searchText = document.getElementById("searchText").value;
+        html = document.getElementById("content").innerHTML;
+        title = document.title;
+
+        window.history.pushState({
+            "html": html,
+            "pageTitle": title
+        }, "", location.origin + location.pathname +  "?search="+searchText)
         //window.location.pathname="/assignment3?search="+searchText
         //console.log(window.location.pathname);
-        var myURL = document.location;
-        console.log(document.location.search);
-        document.location.search = "?search="+searchText;
+        // var myURL = document.location;
+         console.log(document.location);
+        // console.log(document.location.search);
+        //document.location.search = "?search="+searchText;
     }
     var url = window.location.href;
     var arr = url.split("/");

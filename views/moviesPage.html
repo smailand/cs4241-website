@@ -8,11 +8,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/CSS/site.css">
     <link rel="stylesheet" href="/CSS/moviesPage.css">
-    <script src="/javascript/assignment3and4.js"></script>
+    <script src="/javascript/moviesPage.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body id="content">
 
     <div id="topBar">
         <h1>Movies</h1>
@@ -23,14 +23,14 @@
         <p>This page contains the requirements for both assignment 3 and assignment 4.</p>
         <div id="searchBox">
             <label>Search Text:
-                <input type="text" id="searchText"></input>
+                <input type="text" id="searchText" onkeypress="return searchMovie(event)"></input>
             </label>
             <button onclick="search()" value="submit">Search</button>
         </div>
 
         <div id="addMovieBox">
             <label>Add Movie:
-                <input type="text" id="movieToAddToList"></input>
+                <input type="text" id="movieToAddToList" onkeypress="return addMovie(event)"></input>
             </label>
                 <button onclick="addToMovieList()" value="Add">Add</button>
         </div>

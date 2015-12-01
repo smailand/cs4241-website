@@ -14,11 +14,11 @@ var port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/assignment3', function(req, res) {
-  res.sendFile(path.join(__dirname, '/views/assignment3and4.html'));
+  res.sendFile(path.join(__dirname, '/views/moviesPage.html'));
 });
 
 app.use('/assignment4', function(req, res) {
-  res.sendFile(path.join(__dirname, '/views/assignment3and4.html'));
+  res.sendFile(path.join(__dirname, '/views/moviesPage.html'));
 });
 
 
