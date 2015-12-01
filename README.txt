@@ -1,5 +1,6 @@
 The technical achievement that I did for this assignment was to use the HTML5 history.pushState function
-to change the URL and not reload the page.
+to change the URL and not reload the page. I also added keypress events for the searching and adding text
+box, so that the user doesn't need to click on the button (as most websites do).
 
 As far as layout, I kept the same layout that I've used in previous assignments because I thought
 it has worked well so far. It's just meant to be a list of movies, so having them centered in a list
