@@ -21,6 +21,10 @@ app.use('/assignment4', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/moviesPage.html'));
 });
 
+app.use('/assignment6', function(req, res) {
+  res.sendFile(path.join(__dirname, '/views/assignment6.html'));
+});
+
 
 function readMoviesFile(){
     fullMovieList = fs.readFileSync(path.join(__dirname, "public/movies.txt"));

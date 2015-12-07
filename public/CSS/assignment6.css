@@ -1,0 +1,11 @@
+#drawingDiv{
+    border: 5px solid black;
+    margin: auto;
+    padding: 10px;
+    display: inline-block;
+}
+
+body{
+    border-bottom: 5px solid red;
+    margin: 10px;
+}
