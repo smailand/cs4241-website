@@ -111,4 +111,5 @@ function toggleBubbling(e){
         e.stopPropagation();
     }
     doesBubble = !doesBubble;
+    document.getElementById("toggleBubbling").innerHTML = (doesBubble ? "Turn Bubbling Off": "Turn Bubbling On");
 }
