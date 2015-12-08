@@ -1,8 +1,8 @@
 var canvas, ctx, flag = false,
-    prevX = 0,
-    currX = 0,
-    prevY = 0,
-    currY = 0,
+    previousX = 0,
+    currentX = 0,
+    previousY = 0,
+    currentY = 0,
     dot_flag = false;
 
 var x = "black",
@@ -63,8 +63,8 @@ function changeColor(e){
 
 function draw() {
     ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
+    ctx.moveTo(previousX, previousY);
+    ctx.lineTo(currentX, currentY);
     ctx.strokeStyle = x;
     ctx.lineWidth = y;
     ctx.stroke();
@@ -76,17 +76,17 @@ function findxy(res, e) {
         e.stopPropagation();
     }
     if (res == 'mousePressed') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - canvas.offsetLeft;
-        currY = e.clientY - canvas.offsetTop;
+        previousX = currentX;
+        previousY = currentY;
+        currentX = e.clientX - canvas.offsetLeft;
+        currentY = e.clientY - canvas.offsetTop;
 
         flag = true;
         dot_flag = true;
         if (dot_flag) {
             ctx.beginPath();
             ctx.fillStyle = x;
-            ctx.fillRect(currX, currY, 2, 2);
+            ctx.fillRect(currentX, currentY, 2, 2);
             ctx.closePath();
             dot_flag = false;
         }
@@ -96,10 +96,10 @@ function findxy(res, e) {
     }
     if (res == 'mouseMoved') {
         if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
+            previousX = currentX;
+            previousY = currentY;
+            currentX = e.clientX - canvas.offsetLeft;
+            currentY = e.clientY - canvas.offsetTop;
             draw();
         }
     }

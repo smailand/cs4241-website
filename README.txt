@@ -1,14 +1,23 @@
-The technical achievement that I did for this assignment was to use the HTML5 history.pushState function
-to change the URL and not reload the page. I also added keypress events for the searching and adding text
-box, so that the user doesn't need to click on the button (as most websites do).
+For the technical achievement portion of this project I worked to make a canvas that could be drawn on.
 
-As far as layout, I kept the same layout that I've used in previous assignments because I thought
-it has worked well so far. It's just meant to be a list of movies, so having them centered in a list
-format seemed to make the most sense. I also considered the suggestion of in-line editing, but had already
-used clicking on a movie as a way to remove it, so kept that instead. I also kept the pop up confirmation
-for deleting a movie, as I wanted to make sure that people didn't accidentally delete anything.
+While it might appear that there is only one event handler action type of "clicked", this is not
+the case for this website, although all of my actions revolve around the mouse. I wanted to play around with
+the difference between "clicked", "mousedown", "mouseup", and the other actions that happen when you you press
+the mouse button down.
+
+I also added the ability to change the color that is drawn using two different methods, depending on whether
+bubbling is turned on or off (which can be set by the user).
+
+While bubbling is technically on at all times, when the bubbling setting is off, it means that I stop the
+propagation of the event before it has time to "bubble" up past the lower level DOM object.
+
+When bubbling is "off" then only clicking the div above the red line will change the color, but clicking
+inside the drawing canvas to draw does not change the pen color (as would be expected). However, when I
+turn bubbling on, the color changes when any location above the red line is clicked, even inside the canvas
+when the user clicks to draw (not good behavior).
+
 
 
 Found at:
 
-https://sfmailand-cs4241.herokuapp.com/assignment3 (ending with /assignment4 will also work)
+https://sfmailand-cs4241.herokuapp.com/assignment6
