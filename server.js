@@ -17,6 +17,10 @@ app.use('/assignment3', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/moviesPage.html'));
 });
 
+app.use('/assignment7', function(req, res) {
+  res.sendFile(path.join(__dirname, '/views/assignment7.html'));
+});
+
 app.use('/assignment4', function(req, res) {
   res.sendFile(path.join(__dirname, '/views/moviesPage.html'));
 });

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Author: Samuel Mailand -->
+    <!-- Found at: https://sfmailand-cs4241.herokuapp.com/home-->
+    <title>Sam Mailand's CS4241-B15 Website</title>
+    <meta charset="utf-8">
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <link rel="stylesheet" href="/CSS/assignment7.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="/javascript/templates/movieTemplate.js"></script>
+    <script src="/javascript/assignment7.js"></script>
+</head>
+
+<body onload="onLoad()" id="content">
+
+    <input id="textToSearch"></input>
+    <button id="searchButton" onclick="search()">Search</button>
+</br>
+    <label> Please select the amount of information you'd like about the film/show:
+        <select id="amountOfDetail">
+            <option value="summary">Summary</option>
+            <option value="someDetail">Some Detail</option>
+            <option value="allDetails">Everything</option>
+        </select>
+    </label>
+</br>
+
+</body>
+</html>

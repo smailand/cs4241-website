@@ -1,0 +1,19 @@
+.movie {
+  padding: 1em;
+  margin: 1em;
+  background: white;
+  border-radius: 10px;
+  border-bottom: 1px solid #999;
+}
+
+html {
+  background: #eee;
+  font-family: Sans-Serif;
+  line-height: 1.4;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0 0 0.5em 0;
+}

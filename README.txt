@@ -1,23 +1,23 @@
-For the technical achievement portion of this project I worked to make a canvas that could be drawn on.
+For the technical achievement portion of this assignment I found an online (and free) API that returns JSON data, which I use to search for movies.
 
-While it might appear that there is only one event handler action type of "clicked", this is not
-the case for this website, although all of my actions revolve around the mouse. I wanted to play around with
-the difference between "clicked", "mousedown", "mouseup", and the other actions that happen when you you press
-the mouse button down.
+I do all of the searching on the client side (the server only serves up the initial html).  I also use the IMDb ID that the API
+provides to dynamically create a link to the IMDb page.
 
-I also added the ability to change the color that is drawn using two different methods, depending on whether
-bubbling is turned on or off (which can be set by the user).
+I decided to do this to continue the theme that we have been working on this whole term (movies). The three templates that I use are
+three different amounts of information that is shown when a movie is searched, described below:
 
-While bubbling is technically on at all times, when the bubbling setting is off, it means that I stop the
-propagation of the event before it has time to "bubble" up past the lower level DOM object.
+Summary: A brief summary of a movie, with only the most basic information
 
-When bubbling is "off" then only clicking the div above the red line will change the color, but clicking
-inside the drawing canvas to draw does not change the pen color (as would be expected). However, when I
-turn bubbling on, the color changes when any location above the red line is clicked, even inside the canvas
-when the user clicks to draw (not good behavior).
+Some detail: A bit more details than the 'summary', such as the actors, but still not a full description of the movie.
 
+Everything: This displays all of the information that the API that I was using gave back. This includes IMDb ratings, with how many
+            votes had been cast, awards the show/movie has won, the run time, and other info.
 
+I also decided to keep previous searches on the page as a type of search history
+(as I don't have the URL changing so that it can be searched with again).
+
+It also prints out an error message if the movie isn't found or if there is any other error with the API.
 
 Found at:
 
-https://sfmailand-cs4241.herokuapp.com/assignment6
+https://sfmailand-cs4241.herokuapp.com/assignment7
