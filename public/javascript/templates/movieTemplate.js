@@ -1,8 +1,5 @@
 var briefMovie = _.template(
     "<div class='movie'>" +
-    "<div id='poster'>" +
-    "<img src='<%= Poster %>'>"+
-    "</div>" +
     "<div id='info'>" +
     "<h1><%= Title %></h1>"+
     "<a href="+"http://www.imdb.com/title/"+"<%= imdbID %>"+"/?ref_=fn_al_tt_1"+"  target=\"_blank\">IMDb Page</a>"+
@@ -16,9 +13,6 @@ var briefMovie = _.template(
 
 var detailedMovie = _.template(
     "<div class='movie'>" +
-    "<div id='poster'>" +
-    "<img src='<%= Poster %>'>"+
-    "</div>" +
     "<div id='info'>" +
     "<h1><%= Title %></h1>"+
     "<a href="+"http://www.imdb.com/title/"+"<%= imdbID %>"+"/?ref_=fn_al_tt_1"+"  target=\"_blank\">IMDb Page</a>"+
@@ -35,8 +29,6 @@ var detailedMovie = _.template(
 
 var fullMoveDetails = _.template(
     "<div class='movie'>" +
-    "<div id='poster'>" +
-    "</div>" +
     "<div id='info'>" +
     "<h1><%= Title %></h1>"+
     "<a href="+"http://www.imdb.com/title/"+"<%= imdbID %>"+"/?ref_=fn_al_tt_1"+"  target=\"_blank\">IMDb Page</a>"+
