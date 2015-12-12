@@ -36,7 +36,6 @@ var detailedMovie = _.template(
 var fullMoveDetails = _.template(
     "<div class='movie'>" +
     "<div id='poster'>" +
-    "<img src='<%= Poster %>'>"+
     "</div>" +
     "<div id='info'>" +
     "<h1><%= Title %></h1>"+
